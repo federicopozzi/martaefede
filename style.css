@@ -1,3 +1,14 @@
+
+@font-face {
+  font-family: 'Pressura';
+  src: url('./font/GT-Pressura-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.pressura, h2 {
+  font-family: 'Pressura';
+}
 .hero {
   min-height: 100vh;
   background-color: #000;
