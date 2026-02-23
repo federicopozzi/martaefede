@@ -6,11 +6,45 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'Didot-bold';
+  src: url('./font/DidotLTStd-Bold.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Didot-reg';
+  src: url('./font/DidotLTStd-Roman.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.didot-reg {
+  font-family: "didot-reg";
+}
+
+.didot-bold {
+  font-family: "didot-bold";
+}
+
+.dx {
+  text-align: end;
+}
+
+h3 {
+  font-family: "didot-reg";
+}
+
+p {
+  margin: 0;
+}
 .pressura, h2 {
-  font-family: 'Pressura';
+  font-family: 'Didot-bold';
 }
 .hero {
-  min-height: 100vh;
+  
   background-color: #000;
 }
 
@@ -92,4 +126,26 @@ button {
 
 .gallery-container:hover {
   animation-play-state: paused;
+}
+
+
+.cerimonia-img {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.ric-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .cerimonia-img, .ric-img {
+   display: none;
+  }
 }
