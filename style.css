@@ -21,6 +21,16 @@
   font-style: normal;
 }
 
+:root {
+  --text-body: clamp(1.25rem, 4vw, 1.5rem);
+  --text-small: clamp(0.875rem, calc(0.875rem + 0.2vw), 1rem);  /* 14px → 16px */
+
+  --btn-width: clamp(180px, 50vw, 250px);
+  --btn-height: clamp(56px, 10vw, 80px);
+  --btn-font: clamp(1.8rem, 5vw, 2.8125rem); /* 45pt = 45px → 2.8125rem */
+    
+}
+
 .didot-reg {
   font-family: "didot-reg";
 }
@@ -31,6 +41,8 @@
 
 .dx {
   text-align: end;
+  font-family: "didot-reg";
+  font-size: var(--text-small);
 }
 
 h3 {
@@ -39,6 +51,15 @@ h3 {
 
 p {
   margin: 0;
+  font-size: var(--text-body);
+}
+
+.iban {
+  font-size: var(--text-small) !important;
+}
+
+h2 {
+  font-size: var(--text-body);
 }
 .pressura, h2 {
   font-family: 'Didot-bold';
@@ -65,7 +86,7 @@ p {
 
 button {
     border: none;
-    background-color: #ecebeb;
+    background-color: #D9D9D9;
     color: #e81f71;
     font-weight: bold;
     padding: 20px 40px;
@@ -149,3 +170,52 @@ button {
    display: none;
   }
 }
+
+
+
+.btn-rsvp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--btn-width);
+      height: var(--btn-height);
+      font-family:'Didot-reg';;
+      font-size: var(--btn-font);
+      font-weight: 600;
+      color: #D60963;
+      background: #D9D9D9;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.4s ease;
+      text-decoration: none;
+    }
+
+    .btn-rsvp::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #0e0d0b;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    .btn-rsvp:hover::before {
+      transform: translateY(0);
+    }
+
+    .btn-rsvp:hover {
+      color: #e8d9b5;
+    }
+
+    .btn-rsvp span {
+      position: relative;
+      z-index: 1;
+    }
+
+    #rsvp {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
