@@ -25,9 +25,9 @@
   --text-body: clamp(1.25rem, 4vw, 1.5rem);
   --text-small: clamp(0.875rem, calc(0.875rem + 0.2vw), 1rem);  /* 14px → 16px */
 
-  --btn-width: clamp(180px, 50vw, 250px);
-  --btn-height: clamp(56px, 10vw, 80px);
-  --btn-font: clamp(1.8rem, 5vw, 2.8125rem); /* 45pt = 45px → 2.8125rem */
+  --btn-width: clamp(198px, 55vw, 275px);   /* 250px × 1.1 */
+  --btn-height: clamp(62px, 11vw, 88px);    /* 80px × 1.1 */
+  --btn-font: clamp(1.8rem, 5vw, 2.8125rem); /* invariato */
     
 }
 
@@ -81,7 +81,7 @@ h2 {
 }
 
 .giallo {
-    background-color: #ddd9bd;
+    background-color: #D5CDBF;
 }
 
 button {
@@ -97,7 +97,7 @@ button {
   border-radius: 0;
   border: none;
   padding: 0.1rem 0.3rem; /* ridotto rispetto al precedente */
-  font-size: 0.75rem;     /* più piccolo del p */
+  font-size: 1rem;     /* più piccolo del p */
   font-weight: 500;
   line-height: 1;         /* allineato meglio con il testo */
   vertical-align: middle; /* allineato al centro del p */
@@ -218,4 +218,22 @@ button {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    .btn-rsvp {
+      line-height: 1;
+    }
+
+    .piccolo {
+      font-size: var(--text-small) !important;
+      width: 70%;
+    }
+
+    .lista-nozze {
+      font-family: "didot-reg";
+      font-size: var(--text-small) !important;
+    }
+  
+    .text-fucsia {
+      color: #D60963;
     }
