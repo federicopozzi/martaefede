@@ -237,3 +237,46 @@ button {
     .text-fucsia {
       color: #D60963;
     }
+.copy-icon {
+    cursor: pointer;
+    margin-left: 14px;       /* spazio tra IBAN e icona */
+    font-size: 14px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+
+.copy-icon:hover {
+    opacity: 0.7;
+}
+
+.copy-message {
+    margin-left: 8px;        /* spazio tra icona e messaggio */
+    font-size: 14px;
+    color: #fff;             /* o un colore che si vede sullo sfondo */
+    font-weight: 500;
+    display: inline-block;   /* rimane sulla stessa riga */
+}
+.lista-nozze p {
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    /* tutti i paragrafi e titoli all'interno del body */
+    body p,
+    body h1,
+    body h2,
+    body h3,
+    body h4,
+    body h5,
+    body h6,
+    body a,
+    body span:not(#iban),
+    body li {
+        margin-left: 44px;
+        margin-right: 44px;
+    }
+   
+}
