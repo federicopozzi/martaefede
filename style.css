@@ -37,6 +37,12 @@
   --color-bg-giallo: #D5CDBF;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* =====================
    BASE ELEMENTS
    ===================== */
@@ -163,7 +169,7 @@ h3 {
 
 .immagine-fiore-lista {
   position: absolute;
-  top: 300px; right: 350px;
+  top: 300px; right: 300px;
   width: 130px;
   z-index: 1;
 }
