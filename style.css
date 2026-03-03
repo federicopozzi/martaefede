@@ -1,4 +1,6 @@
-
+/* =====================
+   FONTS
+   ===================== */
 @font-face {
   font-family: 'Pressura';
   src: url('./font/GT-Pressura-Regular.woff') format('woff');
@@ -6,150 +8,116 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'Didot-bold';
-  src: url('./font/DidotLTStd-Bold.woff2') format('woff');
+  src: url('./font/DidotLTStd-Bold.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Didot-reg';
-  src: url('./font/DidotLTStd-Roman.woff2') format('woff');
+  src: url('./font/DidotLTStd-Roman.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
+/* =====================
+   CSS VARIABLES
+   ===================== */
 :root {
-  --text-body: clamp(1.25rem, 4vw, 1.5rem);
-  --text-small: clamp(0.875rem, calc(0.875rem + 0.2vw), 1rem);  /* 14px → 16px */
-
-  --btn-width: clamp(198px, 55vw, 275px);   /* 250px × 1.1 */
-  --btn-height: clamp(62px, 11vw, 88px);    /* 80px × 1.1 */
-  --btn-font: clamp(1.8rem, 5vw, 2.8125rem); /* invariato */
-    
+  --text-body:  clamp(1.25rem, 4vw, 1.5rem);
+  --text-small: clamp(0.875rem, calc(0.875rem + 0.2vw), 1rem);
+  --btn-width:  clamp(198px, 55vw, 275px);
+  --btn-height: clamp(62px, 11vw, 88px);
+  --btn-font:   clamp(1.8rem, 5vw, 2.8125rem);
+  --color-fucsia: #e81f71;
+  --color-fucsia-dark: #D60963;
+  --color-bg-btn: #D9D9D9;
+  --color-bg-giallo: #D5CDBF;
 }
 
-.didot-reg {
-  font-family: "didot-reg";
-}
-
-.didot-bold {
-  font-family: "didot-bold";
-}
-
-.dx {
-  text-align: end;
-  font-family: "didot-reg";
-  font-size: var(--text-small);
-}
-
-h3 {
-  font-family: "didot-reg";
-}
-
+/* =====================
+   BASE ELEMENTS
+   ===================== */
 p {
   margin: 0;
   font-size: var(--text-body);
 }
 
-.iban {
-  font-size: var(--text-small) !important;
-}
-
 h2 {
+  font-family: 'Didot-bold';
   font-size: var(--text-body);
 }
-.pressura, h2 {
-  font-family: 'Didot-bold';
+
+h3 {
+  font-family: 'Didot-reg';
 }
-.hero {
-  
-  background-color: #000;
+
+/* =====================
+   TYPOGRAPHY HELPERS
+   ===================== */
+.didot-reg  { font-family: 'Didot-reg'; }
+.didot-bold { font-family: 'Didot-bold'; }
+.pressura   { font-family: 'Didot-bold'; } /* alias mantenuto */
+
+.dx {
+  text-align: end;
+  font-family: 'Didot-reg';
+  font-size: var(--text-small);
 }
+
+.piccolo {
+  font-size: var(--text-small) !important;
+  width: 70%;
+}
+
+.text-fucsia { color: var(--color-fucsia-dark); }
+
+/* =====================
+   LAYOUT / COLORS
+   ===================== */
+.fucsia {
+  background-color: var(--color-fucsia);
+  color: white;
+  text-align: left !important;
+}
+
+.giallo { background-color: var(--color-bg-giallo); }
+
+.overflow { overflow: hidden; }
+
+.contenitore-immagine { position: relative; }
+
+/* =====================
+   HERO
+   ===================== */
+.hero { background-color: #000; }
 
 .hero-gif {
   max-width: 100%;
   height: auto;
 }
 
-.fucsia {
-    background-color: #e81f71;
-    color: white;
-    text-align: left !important;
-}
-
-.giallo {
-    background-color: #D5CDBF;
-}
-
-button {
-    border: none;
-    background-color: #D9D9D9;
-    color: #e81f71;
-    font-weight: bold;
-    padding: 20px 40px;
-}
-.copy-btn {
-  background-color: #ddd9bd;
-  color: #e81f71;
-  border-radius: 0;
-  border: none;
-  padding: 0.1rem 0.3rem; /* ridotto rispetto al precedente */
-  font-size: 1rem;     /* più piccolo del p */
-  font-weight: 500;
-  line-height: 1;         /* allineato meglio con il testo */
-  vertical-align: middle; /* allineato al centro del p */
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.copy-btn:hover {
-  background-color: #d4d0aa; /* hover leggero */
-}
-.gallery {
-  background-color: #f8f8f8;
-  overflow: hidden; /* nasconde ciò che esce dal container */
+/* =====================
+   SEZIONE DATA — fiori decorativi
+   ===================== */
+.section-data {
   position: relative;
+  overflow: visible;
 }
 
-.gallery-container {
-  display: flex;
-  flex-direction: row; /* orizzontale */
-  gap: 1rem;
-  animation: scrollGallery 20s linear infinite;
+.fiore-data {
+  position: absolute;
+  z-index: 10;
 }
 
-.gallery-item {
-  flex: 0 0 250px; /* larghezza fissa per tutte le immagini */
-  height: 400px;   /* altezza fissa */
-  overflow: hidden;
-}
+.fiore-data--tl { top: 0;   left: 0;  width: 90px; }
+.fiore-data--br { bottom: 0; right: 5px; width: 100px; }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ritaglia l’immagine per riempire il frame */
-}
-
-@keyframes scrollGallery {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* scorre verso sinistra */
-}
-
-@media (max-width: 576px) {
-  .gallery-item {
-    flex: 0 0 150px;
-    height: 250px;
-  }
-}
-
-.gallery-container:hover {
-  animation-play-state: paused;
-}
-
-
+/* =====================
+   IMMAGINI CERIMONIA / RICEVIMENTO
+   ===================== */
 .cerimonia-img {
   width: 80%;
   height: auto;
@@ -164,169 +132,190 @@ button {
   margin: auto;
 }
 
-/* Desktop */
 @media (min-width: 768px) {
-  .cerimonia-img, .ric-img {
-   display: none;
-  }
+  .cerimonia-img,
+  .ric-img { display: none; }
 }
 
-
-
-.btn-rsvp {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: var(--btn-width);
-      height: var(--btn-height);
-      font-family:'Didot-reg';;
-      font-size: var(--btn-font);
-      font-weight: 600;
-      color: #D60963;
-      background: #D9D9D9;
-      border: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: color 0.4s ease;
-      text-decoration: none;
-    }
-
-    .btn-rsvp::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: #0e0d0b;
-      transform: translateY(100%);
-      transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-
-    .btn-rsvp:hover::before {
-      transform: translateY(0);
-    }
-
-    .btn-rsvp:hover {
-      color: #e8d9b5;
-    }
-
-    .btn-rsvp span {
-      position: relative;
-      z-index: 1;
-    }
-
-    #rsvp {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 25vh;
-    }
-
-    .btn-rsvp {
-      line-height: 1;
-    }
-
-    .piccolo {
-      font-size: var(--text-small) !important;
-      width: 70%;
-    }
-
-    .lista-nozze {
-      font-family: "didot-reg";
-      font-size: var(--text-small) !important;
-    }
-  
-    .text-fucsia {
-      color: #D60963;
-    }
-.copy-icon {
-    cursor: pointer;
-    margin-left: 14px;       /* spazio tra IBAN e icona */
-    font-size: 14px;
-    vertical-align: middle;
-    position: relative;
-    top: -2px;
-}
-
-.copy-icon:hover {
-    opacity: 0.7;
-}
-
-.copy-message {
-    margin-left: 8px;        /* spazio tra icona e messaggio */
-    font-size: 14px;
-    color: #fff;             /* o un colore che si vede sullo sfondo */
-    font-weight: 500;
-    display: inline-block;   /* rimane sulla stessa riga */
-}
-.lista-nozze p {
-    display: flex;
-    align-items: center;
-}
-
-
-@media (max-width: 768px) {
-    /* tutti i paragrafi e titoli all'interno del body */
-    body p,
-    body h1,
-    body h2,
-    body h3,
-    body h4,
-    body h5,
-    body h6,
-    body a,
-    body span:not(#iban),
-    body li {
-        margin-left: 44px;
-        margin-right: 44px;
-    }
-   
-}
-
-
-.contenitore-immagine {
-  position: relative;
-}
-
-.overflow {
-  overflow: hidden;
-}
-
+/* =====================
+   FIORI DECORATIVI — posizioni assolute
+   ===================== */
 .immagine-fiore-aldo {
-    position: absolute;
-    top: -25px;
-    right: -25px;
-    width: 90px;
-    z-index: 1;
+  position: absolute;
+  top: -25px; right: -25px;
+  width: 90px;
+  z-index: 1;
 }
 
 .immagine-fiore-cerimonia {
-    position: absolute;
-    top: -25px;
-    right: -35px;
-    width: 130px;
-    z-index: 1;
+  position: absolute;
+  top: -25px; right: -35px;
+  width: 130px;
+  z-index: 1;
 }
 
 .immagine-fiore-ricevimento {
-    position: absolute;
-    top: 700px;
-    right: -35px;
-    width: 130px;
-    z-index: 1;
+  position: absolute;
+  top: 700px; right: -35px;
+  width: 130px;
+  z-index: 1;
 }
 
 .immagine-fiore-lista {
-    position: absolute;
-    top: 300px;
-    right: 350px;
-    width: 130px;
-    z-index: 1;
+  position: absolute;
+  top: 300px; right: 350px;
+  width: 130px;
+  z-index: 1;
 }
 
-.immagine-fiore-rsvp1 {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 130px;
-    z-index: 1;
+/* =====================
+   SEZIONE RSVP — fiori decorativi
+   ===================== */
+.section-rsvp {
+  position: relative;
+  overflow: visible;
+}
+
+.fiore-rsvp {
+  position: absolute;
+  z-index: 10;
+}
+
+.fiore-rsvp--tl { top: -50px;  left: -15px;  width: 110px; }
+.fiore-rsvp--br { bottom: -20px; right: -25px; width: 140px; }
+
+/* =====================
+   BUTTON RSVP
+   ===================== */
+#rsvp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+
+.btn-rsvp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--btn-width);
+  height: var(--btn-height);
+  font-family: 'Didot-reg';
+  font-size: var(--btn-font);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-fucsia-dark);
+  background: var(--color-bg-btn);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.btn-rsvp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #0e0d0b;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn-rsvp:hover::before { transform: translateY(0); }
+.btn-rsvp:hover         { color: #e8d9b5; }
+
+.btn-rsvp span {
+  position: relative;
+  z-index: 1;
+}
+
+/* =====================
+   LISTA NOZZE
+   ===================== */
+.lista-nozze {
+  font-family: 'Didot-reg';
+  font-size: var(--text-small) !important;
+}
+
+.lista-nozze p {
+  display: flex;
+  align-items: center;
+}
+
+/* =====================
+   COPY IBAN
+   ===================== */
+.copy-icon {
+  cursor: pointer;
+  margin-left: 14px;
+  font-size: 14px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
+.copy-icon:hover { opacity: 0.7; }
+
+.copy-message {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* =====================
+   GALLERY (commentata — pronta all'uso)
+   ===================== */
+/*
+.gallery {
+  background-color: #f8f8f8;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-container {
+  display: flex;
+  gap: 1rem;
+  animation: scrollGallery 20s linear infinite;
+}
+
+.gallery-container:hover { animation-play-state: paused; }
+
+.gallery-item {
+  flex: 0 0 250px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes scrollGallery {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 576px) {
+  .gallery-item { flex: 0 0 150px; height: 250px; }
+}
+*/
+
+/* =====================
+   RESPONSIVE — margini mobili
+   ===================== */
+@media (max-width: 768px) {
+  body p,
+  body h1, body h2, body h3, body h4, body h5, body h6,
+  body a,
+  body span:not(#iban),
+  body li {
+    margin-left: 44px;
+    margin-right: 44px;
+  }
 }
