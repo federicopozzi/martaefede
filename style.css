@@ -218,6 +218,7 @@ button {
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 25vh;
     }
 
     .btn-rsvp {
@@ -279,4 +280,53 @@ button {
         margin-right: 44px;
     }
    
+}
+
+
+.contenitore-immagine {
+  position: relative;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.immagine-fiore-aldo {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 90px;
+    z-index: 1;
+}
+
+.immagine-fiore-cerimonia {
+    position: absolute;
+    top: -25px;
+    right: -35px;
+    width: 130px;
+    z-index: 1;
+}
+
+.immagine-fiore-ricevimento {
+    position: absolute;
+    top: 700px;
+    right: -35px;
+    width: 130px;
+    z-index: 1;
+}
+
+.immagine-fiore-lista {
+    position: absolute;
+    top: 300px;
+    right: 350px;
+    width: 130px;
+    z-index: 1;
+}
+
+.immagine-fiore-rsvp1 {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 130px;
+    z-index: 1;
 }
