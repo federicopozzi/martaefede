@@ -141,6 +141,25 @@ h3 {
 @media (min-width: 768px) {
   .cerimonia-img,
   .ric-img { display: none; }
+
+  .immagine-fiore-aldo {
+    display: none;
+}
+
+  .cerimonia-img {
+    display: none;
+  }
+  
+}
+
+.data-desk {
+
+  padding: 40px 80px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  font-family: 'Didot-BOLD';
+  color: var(--color-fucsia);
+  font-size: 5vh;
 }
 
 /* =====================
