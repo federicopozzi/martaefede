@@ -136,6 +136,7 @@ h3 {
   height: auto;
   display: block;
   margin: auto;
+  transform: scale(0.7);
 }
 
 @media (min-width: 768px) {
@@ -181,7 +182,7 @@ h3 {
 
 .immagine-fiore-ricevimento {
   position: absolute;
-  top: 700px; right: -35px;
+  top: 555px; right: -35px;
   width: 130px;
   z-index: 1;
 }
