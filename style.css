@@ -99,7 +99,7 @@ h3 {
    HERO
    ===================== */
 .hero {
-  background-color: #000;
+  background-color: var(--color-fucsia);
   width: 100%;
   overflow: hidden;
   padding: 0;
