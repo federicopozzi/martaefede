@@ -22,11 +22,12 @@ Tutto risiede in tre file:
 
 - **index.html** — struttura completa della pagina; sezioni in ordine: hero, citazione, data, luoghi (cerimonia + ricevimento con iframe Google Maps), RSVP (link Google Forms), lista nozze (copia IBAN), footer
 - **style.css** — tutti gli stili; usa variabili CSS per i due colori del brand (`#e81f71` fucsia, `#D5CDBF` beige) e tipografia fluida tramite `clamp()`
-- **script.js** — codice morto: referenzia ID (`#copy-iban`, `#iban-text`) che non esistono nell'HTML. La funzione `copyIBAN()` funzionante è definita inline in `index.html`. Consolidamento in roadmap.
+- **script.js** — unica funzione `copyIBAN()`: copia l'IBAN negli appunti e mostra il messaggio di conferma tramite `#copy-message`
 
 Asset:
 - `font/` — Didot LT Std (più pesi) e GT Pressura; caricati via `@font-face` in style.css
-- `img/` — fiori decorativi (`fiore1–8.png`), immagini dei luoghi, GIF hero (mobile) vs. immagine statica (desktop), icone SVG per le card dei luoghi, set favicon in `img/fav/`
+- `video/` — `vid.mp4`: video hero mostrato su mobile a schermo intero
+- `img/` — fiori decorativi (`fiore1–8.png`), immagini dei luoghi, icone SVG per le card dei luoghi, set favicon in `img/fav/`
 
 ## Roadmap
 
@@ -34,7 +35,7 @@ Il file `roadmap.md` nella root contiene la lista degli interventi di ottimizzaz
 
 ## Dettagli di design
 
-- Su mobile si mostra la GIF animata hero; su desktop un'immagine statica con testo sovrapposto — controllato tramite `display` CSS tra `.gif-hero` e `.hero-desktop`
+- Su mobile si mostra il video hero (`./video/vid.mp4`, tag `<video autoplay muted loop playsinline>`); su desktop viene nascosto (`.hero-gif { display: none }`) e appare il testo sovrapposto su sfondo fucsia — tutto controllato via CSS sulla classe `.hero-gif`
 - I fiori decorativi usano `position: absolute` relativo al contenitore della sezione; modificarli con cautela per evitare layout shift
 - Il bottone RSVP ha un effetto hover con sfondo scorrevole tramite pseudo-elemento `::before`
 - Una sezione galleria esiste in style.css (commentata) ma non è ancora presente nell'HTML

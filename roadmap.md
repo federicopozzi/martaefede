@@ -22,8 +22,8 @@ Rimossa la sezione `<section class="giallo">` commentata (duplicato della sezion
 
 ## 🟠 Performance
 
-### 5. GIF hero → `<video>`
-La GIF animata è probabilmente il file più pesante del sito (decine di MB). Convertirla in `.webm` / `.mp4` e usare `<video autoplay loop muted playsinline>` riduce il peso del 70–90% senza alcuna differenza visiva.
+### ~~5. GIF hero → `<video>`~~ ✓ — 2026-05-14
+Sostituita la GIF con `<video autoplay muted loop playsinline>` che punta a `./video/vid.mp4`.
 
 ### 6. `font-display: swap` sui `@font-face`
 Senza questa dichiarazione il testo rimane invisibile fino al caricamento del font (FOIT). Aggiungere `font-display: swap;` a ogni blocco `@font-face`.
