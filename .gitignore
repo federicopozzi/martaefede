@@ -1,0 +1,21 @@
+# Claude Code
+CLAUDE.md
+.claude/
+roadmap.md
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env e segreti
+.env
+.env.local
+.env*.local

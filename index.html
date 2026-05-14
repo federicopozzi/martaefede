@@ -65,19 +65,6 @@
       <img src="./img/data.png" alt="Cerimonia" class="cerimonia-img">
     </div>
   </section>
-<!-- 
-  <section class="giallo">
-    <div class="container">
-      <div class="row ">
-        <div class="col d-flex justify-content-center align-items-center">
-          <span class="data-desk">
-          5 SETTEMBRE - ORE 11.00
-        </span>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
   <!-- LOCATION -->
   <section id="location" class="py-5 fucsia overflow">
     <div class="container contenitore-immagine">
@@ -107,7 +94,7 @@
   <section id="rsvp" class="pt-5 pb-5 giallo section-rsvp">
     <img src="./img/fiore6.png" class="fiore-rsvp fiore-rsvp--tl" alt="">
     <img src="./img/fiore1.png" class="fiore-rsvp fiore-rsvp--br" alt="">
-    <a class="btn-rsvp" href="https://forms.gle/qgT5ryViJCp8vfAz5" target="_blank">
+    <a class="btn-rsvp" href="https://forms.gle/qgT5ryViJCp8vfAz5" target="_blank" rel="noopener noreferrer">
       <span>RSVP</span>
     </a>
   </section>
@@ -157,15 +144,5 @@
   </footer>
 
   <script src="./script.js"></script>
-  <script>
-    function copyIBAN() {
-      const ibanText = document.getElementById('iban').innerText;
-      navigator.clipboard.writeText(ibanText).then(() => {
-        const message = document.getElementById('copy-message');
-        message.innerText = 'IBAN copiato!';
-        setTimeout(() => { message.innerText = ''; }, 2000);
-      });
-    }
-  </script>
 </body>
 </html>
